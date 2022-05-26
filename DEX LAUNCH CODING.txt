@@ -1,0 +1,72 @@
+Terminal 1:
+
+-Entrar en carpeta core
+
+	cd core
+
+-Lanzar blockchain
+
+	ganache-cli
+
+-Split terminal
+
+Terminal 2:
+
+-Entrar en carpeta core
+
+	cd core
+
+-Instalar librerias (solo primera vez)
+
+	npm install @openzeppelin/contracts@2.5.1
+
+-Compilar y generar smartcontracts de carpeta core en la blockchain 
+
+	truffle migrate --reset
+
+-Copiar dirección contrato inteligente generado UniswapV2Factory
+
+-Salir de carpeta core
+
+	cd ..
+
+-Entrar en carpeta periphery
+
+	cd periphery
+
+-Instalar librerias (solo primera vez)
+
+	npm install @uniswap/lib @uniswap/v2-core
+
+-Compilar periphery (para comprobar que esta OK el código)(solo primera vez)
+
+	truffle compile
+
+-Pegar dirección contrato inteligente UniswapV2Factory en periphery/migrations/2_deploy_contracts
+
+-Compilar y generar smartcontracts de carpeta periphery en la blockchain
+
+	truffle migrate --reset
+
+-Salir de carpeta periphery
+
+	cd ..
+
+-Entrar en carpeta migrator
+
+	cd migrator
+
+-Instalar librerias
+
+	npm install @openzeppelin/contracts@3.4.0
+
+-Compilar migrator (para comprobar que esta OK el código)(solo primera vez)
+
+	truffle compile
+
+-Compilar y generar smartcontracts de carpeta periphery en la blockchain
+
+	truffle migrate --reset
+
+
+
